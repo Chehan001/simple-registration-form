@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registraction</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+        <h2 class="text-xl font-bold mb-4 text-center">Add User Form</h2>
+        <div id="myForm">
+
+            <div class="flex gap-4 mb-4">
+
+                <!-- Title -->
+                <div class="mb-4 w-[20%]">
+                    <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+                    <select id="title"
+                        class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option>MR</option>
+                        <option>MRS</option>
+                        <option>MS</option>
+                    </select>
+                </div>
+
+                <!-- First Name -->
+                <div class="mb-4 w-[80%]">
+                    <label for="firstName" class="block text-sm font-medium text-gray-700">First Name</label>
+                    <input type="text" id="firstName"
+                        class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="First Name">
+                </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="mb-4">
+                <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name</label>
+                <input type="text" id="lastName"
+                    class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Last Name">
+            </div>
+
+
+            <div class="flex gap-5  mt-3 justify-between">
+                <!-- Gender -->
+                <div class="mb-4 ">
+                    <label class="block text-sm font-medium text-gray-700">Gender</label>
+                    <div class="mt-1 flex items-center space-x-4">
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="male"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" checked>
+                            <span class="ml-2 text-sm text-gray-700">Male</span>
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="female"
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                            <span class="ml-2 text-sm text-gray-700">Female</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="mb-4">
+                    <label for="dob" class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                    <input type="date" id="dob"
+                        class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="DD/MM/YYYY">
+                </div>
+
+            </div>
+
+
+            <!-- Email -->
+            <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" onkeyup="emailValidation()"
+                    class="mt-1 block w-full border border-blue-500 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
+                    placeholder="Email">
+                <p class="text-red-500 text-sm mt-1" id="mailError"></p>
+            </div>
+
+            <!-- Mobile No -->
+            <div class="mb-4">
+                <label for="mobile" class="block text-sm font-medium text-gray-700">Mobile No</label>
+                <input type="text" id="mobile" onkeyup="noValidation()"
+                    class="mt-1 block w-full border border-blue-500 rounded-md p-2 focus:ring-red-500 focus:border-red-500"
+                    placeholder="Mobile No">
+                <p class="text-red-500 text-sm mt-1" id="noError"></p>
+            </div>
+
+            <!-- Terms Checkbox -->
+            <div class="mb-4">
+                <label class="flex items-center">
+                    <input type="checkbox" id="agree"
+                        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                    <span class="ml-2 text-sm text-gray-700">I accept the terms in the license agreement</span>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center">
+                <button id="submitBtn" onclick="submit()"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Submit</button>
+            </div>
+        </div>
+        <div id="card" class="mt-[50px]"> </div>
+    </div>
+    <script type="module" src="/main.js"> </script>
+</body>
+</html>
+
